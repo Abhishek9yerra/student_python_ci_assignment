@@ -1,8 +1,9 @@
-from student_account import BankAccount
-
 import pytest
 
-def test_BankAccount_initialization():
+from student_account import BankAccount
+
+
+def test_bankaccount_initialization():
     account = BankAccount("Abhishek", 100)
     assert account.owner == "Abhishek"
     assert account.balance == 100
@@ -30,7 +31,7 @@ def test_deposit_increases_balance():
 
 def test_withdraw_decreases_balance():
     account = BankAccount("Abhishek", 100)
-    assert account.withdraw(50) == 50 
+    assert account.withdraw(50) == 50
     pytest.raises(ValueError, account.withdraw, 200)
     account1=BankAccount("Bob", 200)
     assert account1.withdraw(100) == 100
